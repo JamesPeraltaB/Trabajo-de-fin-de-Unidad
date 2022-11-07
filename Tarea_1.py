@@ -88,3 +88,34 @@ while True:
                 print('Opción incorrecta.')
 
         buscar_libro()
+
+    if opc == '6':
+    # OPCIÓN 6 ORDERNAR LIBROS POR TÍTULO
+        def ordenar_libros():
+            csvData = pd.read_csv(open_file)
+            csvData.sort_values(csvData.columns[1], axis=0, inplace=True)
+            print(csvData)
+
+        ordenar_libros() #El primero es Angels and Demons, el último es Twilight
+
+    if opc == '7':
+    #OPCIÓN 7 Buscar libros por autor, editorial o género
+        def buscar_libro_other():
+            df = pd.DataFrame(data)
+            eleccion = input('¿Buscar por Autor, Editorial o Género?: ')
+            if eleccion.lower() == 'autor':
+                autor = input('Ingresa el autor: ')
+                df = df[df.apply(lambda r: r.str.contains(autor, na=False).any(), axis=1)]
+                print(df)
+            elif eleccion.lower() == 'editorial':
+                editorial = input('Ingresa la editorial: ')
+                df = df[df.apply(lambda r: r.str.contains(editorial, na=False).any(), axis=1)]
+                print(df)
+            elif eleccion.lower() == 'género':
+                genero = input('Ingresa el género: ')
+                df = df[df.apply(lambda r: r.str.contains(genero, na=False).any(), axis=1)]
+                print(df)
+            else:
+                print('Opción incorrecta.')
+
+        buscar_libro_other()

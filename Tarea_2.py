@@ -220,3 +220,320 @@ while True:
             print('Opción incorrecta.')
             
     time.sleep(1)
+
+    if opc=="2":
+        
+        import requests
+
+        url_api = 'https://pokeapi.co/api/v2/pokemon/'
+        response = requests.get(url_api)
+        data = response.json()
+        
+        import requests
+        d = [
+                ["☆ Pichu          ", "☆ Unown"],
+                ["☆ Burmy          ", "☆ Cherrym"],
+                ["☆ Shellos        ", "☆ Gastrodon"],
+                ["☆ Arceus         ", "☆ Deerling"],
+                ["☆ Sawsbuck       ", "☆ Genesect"],
+                ["☆ Vivillon       ", "☆ Flabebe"],
+                ["☆ Floette        ", "☆ Furfou"],
+                ["☆ Xerneas        ", "☆ Silvally"],
+                ["☆ Sinistea       ", "☆ Polteageist"],
+                ["☆ Alcremie       ",""],
+            ]
+     
+        print ("{:<8} {:<30}".format('Formas','de Pokemon a Elegir:'))
+
+        for v in d:
+            col1, col2 = v
+            print ("{:<8} {:<30}".format( col1, col2))
+
+        #FORM PICHU
+        def formar_pichu():
+            pokemon_numbers = []
+            for i in range(171, 173):
+                pokemon_numbers.append(i)
+            for id in pokemon_numbers:
+                url_api = f'https://pokeapi.co/api/v2/pokemon/{id}/'
+                response = requests.get(url_api)    
+                if response.status_code != 200:
+                        print(response.text)
+                else:
+                    data = response.json()        
+                    if len(data['forms']) >= 2:
+                        for item in data['forms']:
+                            print(data['name'], item)
+                        
+        #FORM UNOWN
+        def formar_unown():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/201/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        # #FORM BURMY
+        def formar_burmy():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/412/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM CHERRIM
+        def formar_cherrim():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/421/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM SHELLOS
+        def formar_shellos():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/422/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM GASTRODON
+        def formar_gastrodon():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/423/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM ARCEUS
+        def formar_arceus():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/493/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM DEERLING
+        def formar_deerling():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/585/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM SAWSBUCK
+        def formar_sawsbuck():
+            url_api = f'https://pokeapi.co/api/v2/pokemon/586/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM GENESECT
+        def formar_genesect():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/649/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM VIVILLON
+        def formar_vivillon():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/666/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM FLABEBE
+        def formar_flabebe():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/669/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM FLOETTE
+        def formar_floette():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/670/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM FLORGES
+        def formar_florges():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/671/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM FURFROU
+        def formar_furfrou():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/676/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM XERNEAS
+        def formar_xerneas():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/716/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM SILVALLY
+        def formar_silvally():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/773/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM SINISTEA
+        def formar_sinistea():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/854/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM POLTEAGEIST
+        def formar_polteageist():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/855/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        #FORM ALCREMIE
+        def formar_alcremie():
+            url_api = 'https://pokeapi.co/api/v2/pokemon/869/'
+            response = requests.get(url_api)    
+            if response.status_code != 200:
+                print(response.text)
+            else:
+                data = response.json()        
+                if len(data['forms']) >= 2:
+                    for item in data['forms']:
+                        print(data['name'], item)
+
+        opcion_2 = input('Ingresa el nombre de la forma a listar: ').lower()
+
+        if opcion_2.lower() == 'pichu':
+            formar_pichu()
+        elif opcion_2.lower() == 'unown':
+            formar_unown()
+        elif opcion_2.lower() == 'burmy':
+            formar_burmy()
+        elif opcion_2.lower() == 'cherrim':
+            formar_cherrim()
+        elif opcion_2.lower() == 'shellos':
+            formar_shellos()
+        elif opcion_2.lower() == 'gastrodon':
+            formar_gastrodon()
+        elif opcion_2.lower() == 'arceus':
+            formar_arceus()
+        elif opcion_2.lower() == 'deerling':
+            formar_deerling()
+        elif opcion_2.lower() == 'sawsbuck':
+            formar_sawsbuck()
+        elif opcion_2.lower() == 'genesect':
+            formar_genesect()
+        elif opcion_2.lower() == 'vivillon':
+            formar_vivillon()
+        elif opcion_2.lower() == 'flabebe':
+            formar_flabebe()
+        elif opcion_2.lower() == 'floette':
+            formar_floette()
+        elif opcion_2.lower() == 'florges':
+            formar_florges()
+        elif opcion_2.lower() == 'furfrou':
+            formar_furfrou()
+        elif opcion_2.lower() == 'xerneas':
+            formar_xerneas()
+        elif opcion_2.lower() == 'silvally':
+            formar_silvally()
+        elif opcion_2.lower() == 'sinistea':
+            formar_sinistea()
+        elif opcion_2.lower() == 'polteageist':
+            formar_polteageist()
+        elif opcion_2.lower() == 'alcremie':
+            formar_alcremie()
+        else:
+            print('Opción incorrecta.')

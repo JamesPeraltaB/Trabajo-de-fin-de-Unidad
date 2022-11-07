@@ -36,4 +36,22 @@ while True:
     open_file = 'books2.csv'
 
     data = pd.read_csv(open_file, sep=",") #index_col=0,
->>>>>>> ba4a7922a35a6dd1dfde3d9a23d183dd71b22ba3
+    
+    if opc == '2':
+    #OPCIÓN 2 LISTAR LIBROS
+        def listar_libros():
+            print(data)
+
+        listar_libros()
+
+    if opc == '3':
+    #OPCIÓN 3 AGREGAR LIBRO
+        datos = [input('Id: '), input('Título: '), input('Género: '), input('ISBN: '), input('Editorial: '), input('Autores: ')]
+        def append_list_as_row(file_name, raw_content):
+            
+            with open(file_name,'a+',newline='') as write_obj:
+                cvs_writer = writer(write_obj)
+                cvs_writer.writerow(raw_content)
+                print('¡Listo! Revisa en la ruta que indica la terminal.')
+
+        append_list_as_row(open_file, datos)

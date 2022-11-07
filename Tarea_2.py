@@ -537,6 +537,8 @@ while True:
             formar_alcremie()
         else:
             print('Opción incorrecta.')
+            
+    time.sleep(1)
 
     if opc =="3":
         
@@ -601,7 +603,9 @@ while True:
         elif str(opcion_3) == "trace":
             habilidades_0("trace")
         else:
-            print('Habitat Incorrecto, elige otro por favor.')        
+            print('Habitat Incorrecto, elige otro por favor.')       
+    
+    time.sleep(1)
             
     if opc=="4":
         url_api_4 = "https://pokeapi.co/api/v2/pokemon-habitat/"
@@ -656,6 +660,8 @@ while True:
             habitat("waters-edge")
         else:
             print('Habitat Incorrecto, elige otro por favor.')
+    
+    time.sleep(1)
     
     if opc =="5":
         url_api_5 = "https://pokeapi.co/api/v2/type/"

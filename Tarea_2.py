@@ -538,3 +538,202 @@ while True:
         else:
             print('Opción incorrecta.')
 
+    if opc =="3":
+        
+        url_api_3 = "https://pokeapi.co/api/v2/ability/"
+        
+        import requests
+
+        d = [
+                ["⭐  stench              ", "⭐ sturdy"],
+                ["⭐ drizzle              ", "⭐ damp"],
+                ["⭐ speed-boost          ", "⭐ limber"],
+                ["⭐ battle-armor         ", "⭐ sand-veil"],
+                ["⭐ static               ", "⭐ volt-absorb"],
+                ["⭐ water-absorb         ", "⭐ oblivious"],
+                ["⭐ intimidate           ", "⭐ trace"]      
+            ]
+     
+        print ("{:<8} {:<30}".format('Habilidades','de Pokemon a Elegir:'))
+
+        for v in d:
+            col1, col2 = v
+            print ("{:<8} {:<30}".format( col1, col2))
+
+
+        def habilidades_0(ability_name):
+            response = requests.get(url_api_3+ ability_name)
+            
+            data = response.json()
+
+            #lista de habilidades de pokemones
+            
+            habilidades_pokemones = [habilidad['pokemon']['name']for habilidad in data['pokemon']]
+
+            for i in range(len(habilidades_pokemones)):
+                print("Pokemon: {}".format(habilidades_pokemones[i]))
+
+        opcion_3 = input('Ingresa la habilidad del pokemon a listar: ').lower()
+        if str(opcion_3) == "stench":
+            habilidades_0("stench")
+        elif str(opcion_3) == "drizzle":
+            habilidades_0("drizzle")
+        elif str(opcion_3) == "speed-boost":
+            habilidades_0("speed-boost")
+        elif str(opcion_3) == "battle-armor":
+            habilidades_0("battle-armor")
+        elif str(opcion_3) == "sturdy":
+            habilidades_0("sturdy")
+        elif str(opcion_3) == "damp":
+            habilidades_0("damp")
+        elif str(opcion_3) == "limber":
+            habilidades_0("limber")
+        elif str(opcion_3) == "sand-veil":
+            habilidades_0("sand-veil")
+        elif str(opcion_3) == "static":
+            habilidades_0("volt-absorb")
+        elif str(opcion_3) == "water-absorb":
+            habilidades_0("water-absorb")
+        elif str(opcion_3) == "oblivious":
+            habilidades_0("oblivious")
+        elif str(opcion_3) == "intimidate":
+            habilidades_0("intimidate")
+        elif str(opcion_3) == "trace":
+            habilidades_0("trace")
+        else:
+            print('Habitat Incorrecto, elige otro por favor.')        
+            
+    if opc=="4":
+        url_api_4 = "https://pokeapi.co/api/v2/pokemon-habitat/"
+
+        import requests
+        
+        d = [
+                ["🚀 Cave          ", "🚀 Forest"],
+                ["🚀 Grassland     ", "🚀 Mounstain"],
+                ["🚀 Rare          ", "🚀 Rough-Terrain"],
+                ["🚀 ea            ", "🚀 Urban"],
+                ["🚀 Waters-Edge   ", ""]
+            ]
+     
+        print ("{:<8} {:<30}".format('Habitat','de Pokemon a Elegir:'))
+
+        for v in d:
+            col1, col2 = v
+            print ("{:<8} {:<30}".format( col1, col2))
+
+
+        def habitat(habitat_name):
+            response = requests.get(url_api_4+ habitat_name)
+            
+            data = response.json()
+            
+            #lista de pokemones en habitat
+            
+            lista_pokemones = [pokemones['name']for pokemones in data['pokemon_species']]
+            
+            for i in range(len(lista_pokemones)):
+                print("pokemon: {}".format(lista_pokemones[i]))
+    
+        opcion_4 = input('Ingresa el nombre del Habitat a listar: ').lower()
+        if str(opcion_4) == "cave":
+            habitat("cave")
+        elif str(opcion_4) == "forest":
+            habitat("forest")
+        elif str(opcion_4) == "grassland":
+            habitat("grassland")
+        elif str(opcion_4) == "mountain":
+            habitat("mountain")
+        elif str(opcion_4) == "rare":
+            habitat("rare")
+        elif str(opcion_4) == "rough-terrain":
+            habitat("rough-terrain")
+        elif str(opcion_4) == "sea":
+            habitat("sea")
+        elif str(opcion_4) == "urban":
+            habitat("urban")
+        elif str(opcion_4) == "waters-edge":
+            habitat("waters-edge")
+        else:
+            print('Habitat Incorrecto, elige otro por favor.')
+    
+    if opc =="5":
+        url_api_5 = "https://pokeapi.co/api/v2/type/"
+
+        import requests
+        d = [
+                ["🧬 Normal       ", "🧬 Fighting"],
+                ["🧬 Poison       ", "🧬 Ground"],
+                ["🧬 Rock         ", "🧬 Bug"],
+                ["🧬 Ghost        ", "🧬 Steel"],
+                ["🧬 Fire         ", "🧬 Water"],
+                ["🧬 Grass        ", "🧬 Electric"],
+                ["🧬 Psychic      ", "🧬 Ice"],
+                ["🧬 Dragon       ", "🧬 Dark"],
+                ["🧬 Fairy        ", "🧬 Unknown"],
+                ["🧬 Shadow       ",""],
+            ]
+     
+        print ("{:<8} {:<30}".format('Tipos','de Pokemon a Elegir:'))
+
+        for v in d:
+            col1, col2 = v
+            print ("{:<8} {:<30}".format( col1, col2))
+
+
+        def type_0(type_name):
+            response = requests.get(url_api_5+ type_name)
+            
+            data = response.json()
+            
+            #lista de tipo de pokemones
+            
+            type_pokemones = [tipo['pokemon']['name']for tipo in data['pokemon']]
+
+            for i in range(len(type_pokemones)):
+                print("Pokemon: {}".format(type_pokemones[i]))
+                
+                    
+        opcion_5 = input('Ingresa el tipo del pokemon a listar: ').lower()
+        if str(opcion_5) == "normal":
+            type_0("normal")
+        elif str(opcion_5) == "fighting":
+            type_0("fighting")
+        elif str(opcion_5) == "flying":
+            type_0("flying")
+        elif str(opcion_5) == "poison":
+            type_0("poison")
+        elif str(opcion_5) == "ground":
+            type_0("ground")
+        elif str(opcion_5) == "rock":
+            type_0("rock")
+        elif str(opcion_5) == "bug":
+            type_0("bug")
+        elif str(opcion_5) == "ghost":
+            type_0("ghost")
+        elif str(opcion_5) == "steel":
+            type_0("steel")
+        elif str(opcion_5) == "fire":
+            type_0("fire")
+        elif str(opcion_5) == "water":
+            type_0("water")
+        elif str(opcion_5) == "grass":
+            type_0("grass")
+        elif str(opcion_5) == "electric":
+            type_0("electric")
+        elif str(opcion_5) == "psychic":
+            type_0("psychic")
+        elif str(opcion_5) == "ice":
+            type_0("ice")
+        elif str(opcion_5) == "dragon":
+            type_0("dragon")
+        elif str(opcion_5) == "dark":
+            type_0("dark")
+        elif str(opcion_5) == "fairy":
+            type_0("fairy")
+        elif str(opcion_5) == "unknown":
+            type_0("unknown")
+        elif str(opcion_5) == "shadow":
+            type_0("shadow")
+        else:
+            print('Tipo Incorrecto, elige otro por favor.')

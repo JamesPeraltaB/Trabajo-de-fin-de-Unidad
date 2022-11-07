@@ -36,4 +36,3 @@ while True:
     open_file = 'books2.csv'
 
     data = pd.read_csv(open_file, sep=",") #index_col=0,
->>>>>>> ba4a7922a35a6dd1dfde3d9a23d183dd71b22ba3

@@ -55,3 +55,36 @@ while True:
                 print('¡Listo! Revisa en la ruta que indica la terminal.')
 
         append_list_as_row(open_file, datos)
+
+    if opc == '4':
+    #OPCIÓN 4 ELIMINAR LIBRO
+        def eliminar_libro(file_name):
+            eliminado = input('Ingresa el libro a eliminar: ')
+            with open(file_name, 'r+') as r, open('output.csv', 'w') as f:
+                reader = csv.reader(r)
+                writer = csv.writer(f)
+                for row in reader:
+                    if eliminado in row:
+                        print(f'{row} será eliminada')
+                    else:
+                        writer.writerow(row)
+
+        eliminar_libro(open_file)
+
+    if opc == '5':
+    #OPCIÓN 5 BUSCAR LIBRO
+        def buscar_libro():
+            df = pd.DataFrame(data)
+            eleccion = input('Título o ISBN: ')
+            if eleccion.lower() == 'título':
+                libro = input('Ingresa el libro: ')
+                df = df[df.apply(lambda r: r.str.contains(libro, na=False).any(), axis=1)]
+                print(df)
+            elif eleccion.lower() == 'isbn':
+                isbn = input('Ingresa el ISBN: ')
+                df = df[df.apply(lambda r: r.str.contains(isbn, na=False).any(), axis=1)]
+                print(df)
+            else:
+                print('Opción incorrecta.')
+
+        buscar_libro()

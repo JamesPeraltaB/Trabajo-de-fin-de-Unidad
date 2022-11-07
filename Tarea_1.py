@@ -36,7 +36,7 @@ while True:
     open_file = 'books2.csv'
 
     data = pd.read_csv(open_file, sep=",") #index_col=0,
-    
+
     if opc == '2':
     #OPCIÓN 2 LISTAR LIBROS
         def listar_libros():

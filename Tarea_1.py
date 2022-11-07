@@ -119,3 +119,51 @@ while True:
                 print('Opción incorrecta.')
 
         buscar_libro_other()
+
+    if opc == 'not intended':
+
+    #Not intended: devuelve una lista de autores y cuantas veces se repiten
+        def not_intended():
+            df = pd.DataFrame(data)
+            sixth_column = df.iloc[:, 5]  
+            counts = sixth_column.value_counts()
+            print(counts) 
+
+        print('Esta es una función secreta.')
+        not_intended()
+
+    if opc == '8':
+    #OPCIÓN 8 BUSCAR LIBROS POR No DE AUTORES
+        def buscar_num_autores():
+            num = int(input('Número de autores: '))
+            df = pd.DataFrame(data)
+            # df2 = pd.DataFrame(data)
+            # df2.sort_values(df2.columns[1], axis=0, inplace=True)
+            df_a = df['autores'].str.len().any()
+            df = df['autores'].str.len()
+            print(df)
+
+        buscar_num_autores()
+
+    if opc == '9':
+    #OPCIÓN 9 EDITAR
+        def editar_datos():
+            df = pd.read_csv(open_file)
+            row = int(input('Número de la fila a modificar: '))
+            column = int(input('Nombre de la columna a modificar: '))
+            update = input('Información a modificar: ')
+            df.at[row, column] = update
+            df.to_csv(open_file, index=False)
+            print('Listo. Revisa tu archivo')
+
+        editar_datos()
+
+    if opc == 10:
+    #OPCIÓN 10 RUTA OUTPUT
+        def definir_ruta():
+            df = pd.read_csv(open_file)
+            save_path = input('Escriba la carpeta en donde se guardará el archivo: ')
+            comp_name = os.path.dirname(os.path.abspath(save_path))
+            df.to_csv(os.path.join(comp_name, 'output3.csv'))
+
+        definir_ruta()
